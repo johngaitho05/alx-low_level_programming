@@ -24,7 +24,7 @@ while (k < 10)
 putchar(48 + i);
 putchar(48 + j);
 putchar(48 + k);
-if (i < 8)
+if (i < 7)
 {
 putchar(',');
 putchar(' ');
