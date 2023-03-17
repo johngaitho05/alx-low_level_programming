@@ -10,11 +10,12 @@
  */
 int main(void)
 {
-int n, last;
-char *str, *desc;
+int n;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-last = abs(n % 10);
+n = rand() - RAND_MAX / 2;
+int last = abs(n % 10);
+char *desc;
 if (last == 0)
 {
 desc = "and is 0";
@@ -30,4 +31,5 @@ desc = "and is less than 6 and not 0";
 printf("Last digit of %d is %d %s\n", n, last, desc);
 return (0);
 }
+
 
