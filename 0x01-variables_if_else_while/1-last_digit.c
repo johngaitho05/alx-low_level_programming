@@ -14,7 +14,8 @@ int n;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 n = rand() - RAND_MAX / 2;
-int last = abs(n % 10);
+int last;
+last = abs(n % 10);
 char *desc;
 if (last == 0)
 {
