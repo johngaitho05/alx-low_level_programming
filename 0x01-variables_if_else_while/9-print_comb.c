@@ -11,19 +11,18 @@
 int main(void)
 {
 int i;
-int j;
-for (i = 0; i < 10; i++)
-{
-j = 0;
-while (j < 10)
+i = 0;
+while (i < 10)
 {
 putchar(48 + i);
-putchar(48 + j);
+if (i < 9)
+{
 putchar(',');
 putchar(' ');
-++j;
 }
+++i;
 }
+putchar('\n');
 return (0);
 }
 
