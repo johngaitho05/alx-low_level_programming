@@ -11,7 +11,7 @@
 int main(void)
 {
 int n, last;
-char str[20], *desc;
+char *str, *desc;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 last = abs(n % 10);
