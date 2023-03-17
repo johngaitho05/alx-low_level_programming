@@ -14,13 +14,19 @@ int i;
 int j;
 int k;
 int l;
+int num;
+int counterpart;
 for (i = 0; i < 10; i++)
 {
 for (j = 0; j < 10; j++)
 {
 for (k = 0; k < 10; k++)
 {
-for (l = j + 1; l < 10; l++)
+for (l = 0; l < 10; l++)
+{
+num = i * 1000 + j * 100 + k * 10 + l * 1;
+counterpart = k * 1000 + l * 100 + i * 10 + j * 1;
+if (num < counterpart)
 {
 putchar(48 + i);
 putchar(48 + j);
@@ -31,6 +37,7 @@ if (!(i == 9 && j == 8 && k == 9 && l == 9))
 {
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
