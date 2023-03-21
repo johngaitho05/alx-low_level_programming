@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-#include <main.h>
+#include "main.h"
 /**
  * main - Entry point
  * Description: prints _putchar.
@@ -15,8 +12,7 @@ for (i = 0; word[i] != 0; i++)
 {
 _putchar(word[i]);
 }
-putchar('\n');
+_putchar('\n');
 return (0);
 }
-
 
