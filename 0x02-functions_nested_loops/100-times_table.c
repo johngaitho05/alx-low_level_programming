@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * get_numbers - splits a number in to individual digits
  * @n: number times table (0 < n <= 15)
@@ -55,7 +57,7 @@ if (n < 0 || n > 15)
 return;
 }
 int i;
-int j
+int j;
 int k;
 int l;
 int m;
