@@ -6,13 +6,6 @@
  * Return: 1 if c is a letter, 0 otherwise
  */
 
-
-int main(void)
-{
-_isalpha(108);
-return (0);
-}
-
 int _isalpha(int c)
 {
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
