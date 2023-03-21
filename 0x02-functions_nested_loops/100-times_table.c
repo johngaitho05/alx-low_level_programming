@@ -52,9 +52,15 @@ void print_times_table(int n)
 {
 if (n < 0 || n > 15)
 {
-return (0);
+return;
 }
-int i, j, k, l, m, s, spaces;
+int i;
+int j
+int k;
+int l;
+int m
+int s
+int spaces;
 int *numbers;
 for (i = 0; i <= n; i++)
 {
@@ -85,5 +91,5 @@ _putchar(' ');
 }
 _putchar('\n');
 }
-return (0);
 }
+
