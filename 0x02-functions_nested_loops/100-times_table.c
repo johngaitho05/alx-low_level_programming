@@ -58,8 +58,8 @@ int i;
 int j
 int k;
 int l;
-int m
-int s
+int m;
+int s;
 int spaces;
 int *numbers;
 for (i = 0; i <= n; i++)
