@@ -1,9 +1,8 @@
 #include "main.h"
-
 /**
  * get_numbers - splits a number in to individual digits
- * @n: number times table (0 < n <= 15)
- * Return - pointer to splitted integer array
+ * @n: number to split
+ * Return: an array of digits
  */
 
 int *get_numbers(int n)
@@ -24,7 +23,7 @@ return (r);
 /**
  * get_space_count - get the number of spaces to add based on next number
  * @n: the number that follows
- * Return - number of spaces
+ * Return: number of spaces
  */
 
 int get_space_count(int n)
@@ -43,11 +42,11 @@ return (1);
 }
 }
 
+
 /**
  * print_times_table - prints n times table starting with 0
  * get_numbers - splits a number in to individual digits
  * @n: number times table (0 < n <= 15)
- * Return - 0
  */
 
 void print_times_table(int n)
@@ -88,4 +87,5 @@ _putchar(' ');
 _putchar('\n');
 }
 }
+
 
