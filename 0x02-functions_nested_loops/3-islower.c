@@ -17,6 +17,5 @@ if (c == i)
     break;
 }
 }
-_putchar(48 + res);
 return (res);
 }
