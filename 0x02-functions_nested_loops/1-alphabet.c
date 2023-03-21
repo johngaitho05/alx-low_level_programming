@@ -1,15 +1,9 @@
 #include "main.h"
 /**
- * main - Entry point
+ * print_alphabet - Prints all lowercase letters
  * Description: prints a-z.
  * Return: 0
  */
-
-int main(void)
-{
-    print_alphabet();
-    return (0);
-}
 
 void print_alphabet(void)
 {
