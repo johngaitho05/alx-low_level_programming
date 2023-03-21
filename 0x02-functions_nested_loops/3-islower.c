@@ -1,9 +1,11 @@
 #include "main.h"
 /**
  * _islower - Checks if lower is lower case
- * Description: Checks if lower is lower case
+ * @c: integer parameter to check
+ * Description: Checks if char is lower case
  * Return: 0
  */
+
 int _islower(int c)
 {
 int res;
@@ -13,9 +15,10 @@ for (i = 'a'; i <= 'z'; i++)
 {
 if (c == i)
 {
-    res = 1;
-    break;
+res = 1;
+break;
 }
 }
+_putchar(48 + res);
 return (res);
 }
