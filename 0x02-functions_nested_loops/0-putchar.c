@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-#include <string.h>
 #include "main.h"
 /**
  * main - Entry point
@@ -12,11 +11,12 @@ int main(void)
 {
 int i;
 char word[10] = "_putchar";
-for (i = 0; i < strlen(word); i++)
+for (i = 0; word[i] != 0; i++)
 {
 _putchar(word[i]);
 }
 putchar('\n');
 return (0);
 }
+
 
