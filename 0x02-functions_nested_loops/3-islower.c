@@ -19,6 +19,5 @@ res = 1;
 break;
 }
 }
-_putchar(48 + res);
 return (res);
 }
