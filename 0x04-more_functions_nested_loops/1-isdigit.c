@@ -7,15 +7,6 @@
  */
 int _isdigit(int c)
 {
-int i;
-int j = ("%d", c);
-for (i = 0; i < 10; i++)
-{
-if (i == j || j == 48 + i)
-{
-return (1);
-}
-}
-return (0);
+return (isdigit(c));
 }
 
