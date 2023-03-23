@@ -9,9 +9,13 @@ int _isdigit(int c)
 {
 int i;
 int j = ("%d", c);
-if (j == 48)
+for (i = 0; i < 10; i++)
+{
+if (i == j || j == 48 + i)
 {
 return (1);
 }
+}
 return (0);
 }
+
