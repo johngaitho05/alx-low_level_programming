@@ -1,18 +1,18 @@
+#include <unistd.h>
+
 /**
- * _strlen - Returns the length of a string
- * @s: Pointer to the string to be measured
+ * _puts - prints a string, followed by a new line, to stdout.
+ * @str: the string to print.
  *
- * Return: The length of the string
+ * Return: void.
  */
-int _strlen(char *s)
+void _puts(char *str)
 {
-	int len = 0;
+	int len;
 
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
+	for (len = 0; str[len] != '\0'; len++)
+		;
 
-	return (len);
+	write(STDOUT_FILENO, str, len);
+	write(STDOUT_FILENO, "\n", 1);
 }
