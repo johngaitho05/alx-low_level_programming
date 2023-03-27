@@ -1,14 +1,12 @@
-/**
- * swap_int - swaps the values of two integers
- *
- * @a: pointer to the first integer
- * @b: pointer to the second integer
- */
-void swap_int(int *a, int *b)
-{
-        int temp;
+#include <stdio.h>
 
-        temp = *a;
-        *a = *b;
-        *b = temp;
+/**
+ * reset_to_98 - updates the value of the variable
+ * the pointer points to to 98
+ * @n: pointer to the variable to update
+ */
+void reset_to_98(int *n)
+{
+	*n = 98;
 }
+
