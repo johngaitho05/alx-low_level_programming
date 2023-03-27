@@ -18,7 +18,6 @@ int _atoi(char *s)
 			result = result * 10 + (s[i] - '0');
 		}
 		else if (result > 0) {
-			// We have already found a number, so stop parsing
 			break;
 		}
 
