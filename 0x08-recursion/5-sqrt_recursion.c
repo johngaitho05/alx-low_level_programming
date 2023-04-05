@@ -6,12 +6,12 @@
  * Return: square root of n if its a perfect square else -1
  */
 int _sqrt_helper(int low, int high, int n)
-{
+{       int mid = low + (high - low) / 2;
+
 	if (low > high)
 	{
 		return (-1);
 	}
-	int mid = low + (high - low) / 2;
 
 	if (mid * mid == n)
 	{
