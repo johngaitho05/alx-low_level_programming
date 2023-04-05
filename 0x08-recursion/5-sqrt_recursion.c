@@ -1,7 +1,7 @@
 /**
- * actual_sqrt_recursion - recurses to find the natural
+ * _sqrt_helper - recurses to find the natural
  * square root of a number
- * @n: number to calculate the sqaure root of
+ * @n: number to calculate the square root of
  * @i: iterator
  *
  * Return: the resulting square root
