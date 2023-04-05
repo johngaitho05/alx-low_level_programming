@@ -95,7 +95,6 @@ local_urls.py
 nohup.out
 tracking.dat
 nbproject
-.test.*
+test.*
 /data/
 secret.*
-_putchar.c
