@@ -1,44 +1,33 @@
 /**
- * _sqrt_helper - helper function for finding square root of n
- * @n: the number to find square root for
- * @low: the smallest number in the range
- * @high: the largest number in the range
- * Return: square root of n if its a perfect square else -1
+ * actual_sqrt_recursion - recurses to find the natural
+ * square root of a number
+ * @n: number to calculate the sqaure root of
+ * @i: iterator
+ *
+ * Return: the resulting square root
  */
-int _sqrt_helper(int low, int high, int n)
-{       int mid = low + (high - low) / 2;
-
-	if (low > high)
-	{
+int _sqrt_helper(int n, int i)
+{
+	if (i * i > n)
 		return (-1);
-	}
-
-	if (mid * mid == n)
-	{
-		return (mid);
-	} else if (mid * mid > n)
-	{
-		return (_sqrt_helper(low, mid - 1, n));
-	}
-	return (_sqrt_helper(mid + 1, high, n));
-
+	if (i * i == n)
+		return (i);
+	return (_sqrt_helper(n, i + 1));
 }
 
+
 /**
- * _sqrt_recursion - Finds the square root of n
- * @n: the number to find square root for
- * Return: square root of n if its a perfect square else -1
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number to calculate the square root of
+ *
+ * Return: the resulting square root
  */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
-	{
 		return (-1);
-	} else if (n == 0 || n == 1)
-	{
+	if (n == 0 || n == 1)
 		return (n);
-	}
-
-	return (_sqrt_helper(1, n, n));
-
+	return (_sqrt_helper(n, 0));
 }
+
