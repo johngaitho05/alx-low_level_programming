@@ -1,28 +1,27 @@
 #include "stdio.h"
 #include "string.h"
 
+void _print_char(char *s, int index){
+	if(index >= strlen(s))
+	{
+//		putchar('\n');
+		return;
+	}
+	putchar(s[index]);
+	_print_char(s, index+1);
+}
+
 /**
  * _puts_recursion - prints a string
  * @s: the string to be printed
  */
 void _puts_recursion(char *s)
 {
-	int i;
-
-	for (i = 0; i < strlen(s); i++)
-	{
-		putchar(s[i]);
-	}
+	_print_char(s, 0);
 }
 
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	_puts_recursion("Puts with recursion");
-	return (0);
+int main(){
+	char hello[] = "Hello boy";
+	_puts_recursion(hello);
 }
