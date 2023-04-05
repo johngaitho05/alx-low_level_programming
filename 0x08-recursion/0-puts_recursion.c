@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * _print_rev_recursion - prints a string in reverse
- * @s: the string to be printed in reverse
+ * _puts_recursion - prints a string followed by a new line
+ * @s: the string to be printed
  */
 
 void _puts_recursion(char *s)
