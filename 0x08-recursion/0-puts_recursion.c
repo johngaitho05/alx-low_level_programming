@@ -6,7 +6,7 @@
  * @s: the string
  * @index: the index of the character to be printed
  */
-void _print_char(char *s, int index)
+void _print_char(char *s, size_t index)
 {
 	if (index >= strlen(s))
 	{
