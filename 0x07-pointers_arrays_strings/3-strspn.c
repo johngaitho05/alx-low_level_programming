@@ -8,16 +8,12 @@
  * Return: number of bytes in the initial segment of @s which consist only of
  * bytes from @accept.
  */
-unsigned int _strspn(char *s, char *accept)
-{
+unsigned int _strspn(char *s, char *accept) {
 	unsigned int x, y, count = 0;
 
-	for (x = 0; s[x]; x++)
-	{
-		for (y = 0; accept[y]; y++)
-		{
-			if (s[x] == accept[y])
-			{
+	for (x = 0; s[x]; x++) {
+		for (y = 0; accept[y]; y++) {
+			if (s[x] == accept[y]) {
 				count++;
 				break;
 			}

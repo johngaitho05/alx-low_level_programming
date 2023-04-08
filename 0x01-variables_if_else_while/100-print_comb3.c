@@ -10,24 +10,24 @@
  */
 int main(void)
 {
-int i;
-int j;
-for (i = 0; i < 9; i++)
-{
-j = i + 1;
-while (j < 10)
-{
-putchar(48 + i);
-putchar(48 + j);
-if (i < 8)
-{
-putchar(',');
-putchar(' ');
-}
-++j;
-}
-}
-putchar('\n');
-return (0);
+	int i;
+	int j;
+	for (i = 0; i < 9; i++)
+	{
+		j = i + 1;
+		while (j < 10)
+		{
+			putchar(48 + i);
+			putchar(48 + j);
+			if (i < 8)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			++j;
+		}
+	}
+	putchar('\n');
+	return (0);
 }
 
