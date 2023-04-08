@@ -1,15 +1,6 @@
 #include "main.h"
 
 /**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
-
-/**
  * _abs - computes the absolute value of an integer
  * @x: int to be checked
  * Return: absolute value of int

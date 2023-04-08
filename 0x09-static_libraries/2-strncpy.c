@@ -1,15 +1,6 @@
 #include "main.h"
 
 /**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
-
-/**
  * _strncpy - copies a string
  * @dest: destination string
  * @src: source string

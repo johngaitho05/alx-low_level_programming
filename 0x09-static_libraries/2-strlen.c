@@ -1,11 +1,4 @@
-/**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
+
 
 /**
  * _strlen - Returns the length of a string

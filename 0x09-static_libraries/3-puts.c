@@ -1,13 +1,6 @@
 #include <unistd.h>
 
-/**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
+
 
 /**
  * _puts - prints a string, followed by a new line, to stdout.

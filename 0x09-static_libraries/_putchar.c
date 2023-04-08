@@ -1,10 +1,6 @@
 #include "main.h"
 #include <unistd.h>
 
-int main(){
-	return (0);
-}
-
 /**
  * _putchar - prints a character
  * @c: the character to be printed

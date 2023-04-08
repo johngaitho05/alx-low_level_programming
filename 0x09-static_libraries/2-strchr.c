@@ -1,14 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-/**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
+
 
 /**
  * _strchr - locates a character in a string

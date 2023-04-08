@@ -1,15 +1,6 @@
 #include "main.h"
 
 /**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
-
-/**
  * *_strspn - gets the length of a prefix substring.
  * @s: pointer to a string.
  * @accept: pointer to a string of bytes to compare @s with.

@@ -1,15 +1,6 @@
 #include "main.h"
 
 /**
- * main- the entry point
- * Return: 0
- */
-int main()
-{
-	return (0);
-}
-
-/**
  * *_strstr - locates a substring in a string
  * @haystack: pointer to the string to search
  * @needle: pointer to the substring to search for
