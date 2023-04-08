@@ -7,15 +7,19 @@
  * @size: size of buffer.
  * Return: no return.
  */
-void print_buffer(char *b, int size) {
+void print_buffer(char *b, int size)
+{
 	int j, k, l;
 
 	if (size <= 0)
 		printf("\n");
-	else {
-		for (j = 0; j < size; j += 10) {
+	else
+	{
+		for (j = 0; j < size; j += 10)
+		{
 			printf("%.8x:", j);
-			for (k = j; k < j + 10; k++) {
+			for (k = j; k < j + 10; k++)
+			{
 				if (k % 2 == 0)
 					printf(" ");
 				if (k < size)
@@ -24,7 +28,8 @@ void print_buffer(char *b, int size) {
 					printf("  ");
 			}
 			printf(" ");
-			for (l = j; l < j + 10; l++) {
+			for (l = j; l < j + 10; l++)
+			{
 				if (l >= size)
 					break;
 				if (*(b + l) < 32 || *(b + l) > 126)

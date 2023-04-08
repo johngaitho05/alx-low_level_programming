@@ -5,12 +5,15 @@
  * starting from 00:00 to 23:59
  */
 
-void jack_bauer(void) {
+void jack_bauer(void)
+{
 	int i = 0, j;
 
-	while (i < 24) {
+	while (i < 24)
+	{
 		j = 0;
-		while (j < 60) {
+		while (j < 60)
+		{
 			_putchar((i / 10) + 48);
 			_putchar((i % 10) + 48);
 			_putchar(':');

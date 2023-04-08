@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _islower - Checks if lower is lower case
  * @c: integer parameter to check

@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
  * main - Entry point
  * Description: Generates a random number and
@@ -20,12 +21,10 @@ int main(void)
 	if (last == 0)
 	{
 		desc = "and is 0";
-	}
-	else if (last > 5)
+	} else if (last > 5)
 	{
 		desc = "and is greater than 5";
-	}
-	else if (last < 6)
+	} else if (last < 6)
 	{
 		desc = "and is less than 6 and not 0";
 	}

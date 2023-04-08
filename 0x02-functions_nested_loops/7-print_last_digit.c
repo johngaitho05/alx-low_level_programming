@@ -5,13 +5,16 @@
  * @x: int to extract the last digit from
  * Return: value of the last digit
  */
-int print_last_digit(int x) {
+int print_last_digit(int x)
+{
 	int y;
-	if (x < 0) {
+	if (x < 0)
+	{
 		x = -x;
 	}
 	y = x % 10;
-	if (y < 0) {
+	if (y < 0)
+	{
 		y = -y;
 	}
 	_putchar(y + '0');
