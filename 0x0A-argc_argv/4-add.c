@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int i;
 	int result = 0;
 	int current;
-	char *ptr[] = {};
+	char *ptr[5];
 
 	for (i = 1; i < argc; i++)
 	{
