@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
+
 /**
  * main - multiply 2 numbers
  * @argc: number of command line arguments
@@ -12,7 +13,7 @@ int main(int argc, char *argv[])
 	int x;
 	int y;
 
-	if(argc != 3)
+	if (argc != 3)
 	{
 		printf("%s", "Error\n");
 		return (1);
