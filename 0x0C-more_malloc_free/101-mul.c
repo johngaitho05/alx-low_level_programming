@@ -19,7 +19,8 @@ void print_error_and_exit(void)
  */
 int is_valid_number(char *str)
 {
-	for (int i = 0; str[i] != '\0'; i++)
+	int i;
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (!isdigit(str[i]))
 		{
@@ -50,15 +51,17 @@ int multiply(int x, int y)
  */
 int main(int argc, char *argv[])
 {
+	int num1, num2, result;
+
 	if (argc != 3 || !is_valid_number(argv[1]) || !is_valid_number(argv[2]))
 	{
 		print_error_and_exit();
 	}
 
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[2]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
 
-	int result = multiply(num1, num2);
+	result = multiply(num1, num2);
 
 	printf("%d\n", result);
 
