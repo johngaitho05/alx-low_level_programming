@@ -10,7 +10,8 @@ size_t list_len(const list_t *h)
 {
 	size_t length = 0;
 
-	for (const list_t *node = h; node != NULL; node = node->next) {
+	for (const list_t *node = h; node != NULL; node = node->next)
+	{
 		length++;
 	}
 
