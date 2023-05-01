@@ -1,5 +1,3 @@
-#include "stdio.h"
-
 #ifndef ALX_LOW_LEVEL_PROGRAMMING_LISTS_H
 #define ALX_LOW_LEVEL_PROGRAMMING_LISTS_H
 
