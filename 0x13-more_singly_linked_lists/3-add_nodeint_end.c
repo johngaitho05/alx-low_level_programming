@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint - insert a node in at the end of a linked list
+ * add_nodeint_end - insert a node in at the end of a linked list
  * @head: the head node of the list
  * @n: the value to insert
  * Return: the head node
