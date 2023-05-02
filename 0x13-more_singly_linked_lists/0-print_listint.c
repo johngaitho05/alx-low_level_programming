@@ -1,6 +1,5 @@
 #include "lists.h"
 
-
 /**
  * print_listint - print the contents of a singly linked list
  * @h: the linked list
