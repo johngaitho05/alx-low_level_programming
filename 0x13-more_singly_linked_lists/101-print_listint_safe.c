@@ -21,7 +21,6 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (prev == nxt)
 			{
-				printf("-> [%p] %d\n", (void *)nxt, nxt->n);
 				return (count);
 			}
 
