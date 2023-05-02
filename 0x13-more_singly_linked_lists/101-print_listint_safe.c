@@ -22,13 +22,13 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (prev == nxt)
 			{
-				_putchar("[%p] %d\n", (void *)nxt, nxt->n);
+				printf("-> [%p] %d\n", (void *)nxt, nxt->n);
 				return (count);
 			}
 
 			prev = prev->next;
 		}
-		_putchar("[%p] %d\n", (void *)nxt, nxt->n);
+		printf("[%p] %d\n", (void *)nxt, nxt->n);
 		nxt = nxt->next;
 		count++;
 	}
