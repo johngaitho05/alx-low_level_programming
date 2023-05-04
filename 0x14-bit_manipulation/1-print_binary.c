@@ -2,8 +2,8 @@
 
 
 /**
- * print_binary - prints the binary equivalent of a given number
- * @n: decimal number fro which to print binary equivalent
+ * print_binary - prints the binary equivalent of a decimal number
+ * @n: decimal number to convert
  */
 void print_binary(unsigned long int n)
 {
