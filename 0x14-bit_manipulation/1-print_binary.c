@@ -7,37 +7,40 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i;
-	unsigned long int increment;
-	unsigned long int closest = 1;
-	int pow = 0;
-	unsigned long int next = 2;
+	int i = 0, add;
+	unsigned long int closest;
 
 	if (n == 0)
 	{
-		_putchar(48);
+		_putchar('0');
 		return;
 	}
 
-	while (next <= n)
+	while ((n >> i) > 0)
 	{
-		closest = 1 << (pow + 1);
-		next = closest + (1 << (pow + 1));
-		pow++;
+		closest = 1 << i;
+		i++;
 	}
-
 	_putchar('1');
-	for (i = pow - 1; i >= 0; i--)
+	i -= 2;
+	while (closest != n)
 	{
-		increment = 1 << i;
-		if (closest + increment <= n)
+		add = (1 << i);
+		if (closest + add <= n)
 		{
-			closest += increment;
 			_putchar('1');
+			closest += add;
 		}
 		else
 		{
 			_putchar('0');
 		}
+		i -= 1;
+
+	}
+	while (i >= 0)
+	{
+		_putchar('0');
+		i--;
 	}
 }
