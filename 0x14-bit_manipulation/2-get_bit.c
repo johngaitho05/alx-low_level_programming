@@ -1,26 +1,20 @@
 #include "main.h"
 
 /**
- * print_binary - prints the binary equivalent of a given number
- * @n: decimal number fro which to print binary equivalent
+ * get_bit - get bit at index
+ * @n: decimal number
+ * @index: index of the bit to be located
+ *
+ * Return: value of the bit (0 or 1)
  */
-void print_binary(unsigned long int n)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	int i, j = 0;
-	unsigned long int nxt;
+	int bit;
 
-	for (i = 63; i >= 0; i--)
-	{
-		nxt = n >> i;
+	if (index > 63)
+		return (-1);
 
-		if (nxt & 1)
-		{
-			_putchar('1');
-			j++;
-		}
-		else if (j)
-			_putchar('0');
-	}
-	if (!j)
-		_putchar('0');
+	bit = (n >> index) & 1;
+
+	return (bit);
 }

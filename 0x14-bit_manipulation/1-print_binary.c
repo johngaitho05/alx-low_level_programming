@@ -2,45 +2,26 @@
 
 
 /**
- * print_binary - convert decimal ti binary
- * @n: the decimal number to convert
+ * print_binary - prints the binary equivalent of a given number
+ * @n: decimal number fro which to print binary equivalent
  */
 void print_binary(unsigned long int n)
 {
-	int i = 0, add;
-	unsigned long int closest;
+	int i, j = 0;
+	unsigned long int nxt;
 
-	if (n == 0)
+	for (i = 63; i >= 0; i--)
 	{
-		_putchar('0');
-		return;
-	}
+		nxt = n >> i;
 
-	while ((n >> i) > 0)
-	{
-		closest = 1 << i;
-		i++;
-	}
-	_putchar('1');
-	i -= 2;
-	while (closest != n)
-	{
-		add = (1 << i);
-		if (closest + add <= n)
+		if (nxt & 1)
 		{
 			_putchar('1');
-			closest += add;
+			j++;
 		}
-		else
-		{
+		else if (j)
 			_putchar('0');
-		}
-		i -= 1;
-
 	}
-	while (i >= 0)
-	{
+	if (!j)
 		_putchar('0');
-		i--;
-	}
 }
