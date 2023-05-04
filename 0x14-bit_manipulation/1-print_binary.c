@@ -26,18 +26,18 @@ void print_binary(unsigned long int n)
 		pow++;
 	}
 
-	_putchar(49);
+	_putchar('1');
 	for (i = pow - 1; i >= 0; i--)
 	{
 		increment = 1 << i;
 		if (closest + increment <= n)
 		{
 			closest += increment;
-			_putchar(49);
+			_putchar('1');
 		}
 		else
 		{
-			_putchar(48);
+			_putchar('0');
 		}
 	}
 }
