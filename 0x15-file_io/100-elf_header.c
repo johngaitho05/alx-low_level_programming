@@ -229,6 +229,32 @@ int check_elf(char *file)
 }
 
 /**
+ * error_response - prints error and returns exit code (98)
+ * @error_code - code that determines the error to print
+ * Return: 98
+ */
+int error_response(int error_code)
+{
+	switch (error_code)
+	{
+		case 1:
+			dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
+			break;
+		case 2:
+			dprintf(STDERR_FILENO, "Err: file can not be open\n");
+			break;
+		case 3:
+			dprintf(STDERR_FILENO, "Err: The file can not be read\n");
+			break;
+		case 4:
+			dprintf(STDERR_FILENO, "Err: It is not an ELF\n");
+
+	}
+
+	return (98);
+}
+
+/**
  * main - check the code for Holberton School students.
  * @argc: number of arguments.
  * @argv: arguments vector.
@@ -236,40 +262,28 @@ int check_elf(char *file)
  */
 int main(int argc, char *argv[])
 {
-	int fd, ret_read;
+	int rs, ret_read;
 	char file[27];
 
 	if (argc != 2)
-	{
-		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
-		exit(98);
-	}
+		return (error_response(1));
 
-	fd = open(argv[1], O_RDONLY);
+	rs = open(argv[1], O_RDONLY);
 
-	if (fd < 0)
-	{
-		dprintf(STDERR_FILENO, "Err: file can not be open\n");
-		exit(98);
-	}
+	if (rs < 0)
+		return (error_response(2));
 
-	lseek(fd, 0, SEEK_SET);
-	ret_read = read(fd, file, 27);
+	lseek(rs, 0, SEEK_SET);
+	ret_read = read(rs, file, 27);
 
 	if (ret_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Err: The file can not be read\n");
-		exit(98);
-	}
+		return (error_response(3));
 
 	if (!check_elf(file))
-	{
-		dprintf(STDERR_FILENO, "Err: It is not an ELF\n");
-		exit(98);
-	}
+		return (error_response(4));
 
 	print_header(file);
-	close(fd);
+	close(rs);
 
 	return (0);
 }
