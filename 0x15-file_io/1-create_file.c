@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * create_file - create a file and paste content
@@ -9,7 +10,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file, rs, ws = 0;
+	int file, rs, ws = strlen(text_content);
 
 	if (!filename)
 		return (-1);
@@ -20,8 +21,6 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content)
 	{
-		while (text_content[ws])
-			ws++;
 		rs = write(file, text_content, ws);
 		if (rs != ws)
 			return (-1);
