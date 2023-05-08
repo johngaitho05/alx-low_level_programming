@@ -33,6 +33,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buff_size);
 		return (0);
 	}
+	buff_size[rb] = '\0';
 
 	close(fd);
 
