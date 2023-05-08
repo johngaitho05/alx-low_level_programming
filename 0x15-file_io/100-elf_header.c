@@ -11,38 +11,36 @@
  */
 void print_entry32(char *file)
 {
-	int index = 26;
+	int index;
 
 	printf("80");
-	while (index >= 22)
+	for (index = 26; index >= 22; index--)
 	{
 		if (file[index] > 0)
 			printf("%x", file[index]);
 		else if (file[index] < 0)
 			printf("%x", 256 + file[index]);
-
-		if (file[7] == 6)
-			printf("00");
-
-		index--;
 	}
+	if (file[7] == 6)
+		printf("00");
 }
 
+/**
+ * print_entry64 - prints the entry address for 64bit machine
+ * @file: the EFL pointer
+ */
 void print_entry64(char *file)
 {
-	int index = 26;
+	int index;
 
 
-	while (index > 23)
+	for (index = 26; index > 23; index--)
 	{
-
 		if (file[index] >= 0)
 			printf("%02x", file[index]);
 
 		else if (file[index] < 0)
 			printf("%02x", 256 + file[index]);
-
-		index--;
 
 	}
 }
@@ -63,7 +61,7 @@ void print_entry(char *file)
 		case '1':
 			print_entry32(file);
 			break;
-		default:
+		case '2':
 			print_entry64(file);
 			break;
 	}
@@ -108,7 +106,7 @@ void print_type(char *file)
 }
 
 /**
- * print_os_ab - prints osabi
+ * print_os_abi - prints OS/ABI
  * @file: the EFL pointer
  */
 void print_os_abi(char *file)
@@ -138,7 +136,7 @@ void print_os_abi(char *file)
 
 
 /**
- * print_version - prints version
+ * print_version - prints Version
  * @file: the EFL pointer
  */
 void print_version(char *file)
