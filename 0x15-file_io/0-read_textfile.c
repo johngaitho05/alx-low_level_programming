@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-
 
 /**
  * read_textfile - print the first n letters chars of a file
