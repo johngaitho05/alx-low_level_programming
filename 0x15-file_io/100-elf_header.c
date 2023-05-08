@@ -51,7 +51,8 @@ char *get_data(Elf64_Ehdr header)
 {
 	char *res;
 
-	switch (header.e_ident[EI_DATA]) {
+	switch (header.e_ident[EI_DATA])
+	{
 		case ELFDATA2LSB:
 			res = "2's complement, little endian";
 			break;
@@ -168,7 +169,7 @@ char *getType(Elf64_Ehdr header)
 			res = "Core file";
 			break;
 		default:
-			res  ="Unknown file type";
+			res  = "Unknown file type";
 			break;
 	}
 
@@ -194,9 +195,12 @@ int print_header(Elf64_Ehdr header)
 	printf("\n");
 	printf("  Class:                             %s\n", get_class(header));
 	printf("  Data:                              %s\n", get_data(header));
-	printf("  Version:                           %d (current)\n", header.e_version);
-	printf("  OS/ABI:                            %s\n", get_os_abi(header));
-	printf("  ABI Version:                       %hu\n", header.e_ident[EI_ABIVERSION]);
+	printf("  Version:                           %d (current)\n",
+	       header.e_version);
+	printf("  OS/ABI:                            %s\n",
+	       get_os_abi(header));
+	printf("  ABI Version:                       %hu\n",
+	       header.e_ident[EI_ABIVERSION]);
 	printf("  Type:                              %s\n", getType(header));
 	printf("  Entry point address:               0x%lx\n", header.e_entry);
 
@@ -219,24 +223,24 @@ int main(int argc, char *argv[])
 	Elf64_Ehdr header;
 	FILE *fd;
 
-	if(argc != 2)
-		return errorResponse(1, "");
+	if (argc != 2)
+		return (errorResponse(1, ""));
 
 	filename = argv[1];
 	fd  = fopen(filename, "r");
 	if (!fd)
-		return (errorResponse(2,filename));
+		return (errorResponse(2, filename));
 
 	if (fread(&header, sizeof(header), 1, fd) != 1)
 		return (errorResponse(2, filename));
 
 	if (memcmp(header.e_ident, "\x7f""ELF", 4) != 0)
-		return (errorResponse(3,filename));
+		return (errorResponse(3, filename));
 
 	res =  print_header(header);
 
-	if(fclose(fd) == EOF)
-		return (errorResponse(5,filename));
+	if (fclose(fd) == EOF)
+		return (errorResponse(5, filename));
 
 	return (res);
 }
