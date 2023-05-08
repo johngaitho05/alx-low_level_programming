@@ -248,6 +248,7 @@ int error_response(int error_code)
 			break;
 		case 4:
 			dprintf(STDERR_FILENO, "Err: It is not an ELF\n");
+			break;
 
 	}
 
