@@ -230,7 +230,7 @@ int check_elf(char *file)
 
 /**
  * error_response - prints error and returns exit code (98)
- * @error_code - code that determines the error to print
+ * @error_code: code that determines the error to print
  * Return: 98
  */
 int error_response(int error_code)
