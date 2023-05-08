@@ -108,31 +108,31 @@ char *get_os_abi(Elf64_Ehdr header)
 	switch (header.e_ident[EI_OSABI])
 	{
 		case ELFOSABI_SYSV:
-			res = "UNIX System V";
+			res = "UNIX - System V";
 			break;
 		case ELFOSABI_HPUX:
-			res = "HP-UX";
+			res = "UNIX - HP-UX";
 			break;
 		case ELFOSABI_LINUX:
-			res = "Linux";
+			res = "UNIX - Linux";
 			break;
 		case ELFOSABI_SOLARIS:
-			res = "Solaris";
+			res = "UNIX - Solaris";
 			break;
 		case ELFOSABI_FREEBSD:
-			res = "FreeBSD";
+			res = "UNIX - FreeBSD";
 			break;
 		case ELFOSABI_NETBSD:
-			res = "NetBSD";
+			res = "UNIX - NetBSD";
 			break;
 		case ELFOSABI_OPENBSD:
-			res = "OpenBSD";
+			res = "UNIX - OpenBSD";
 			break;
 		case ELFOSABI_ARM:
-			res = "ARM";
+			res = "UNIX - ARM";
 			break;
 		case ELFOSABI_STANDALONE:
-			res = "Standalone (embedded)";
+			res = "UNIX - Standalone (embedded)";
 			break;
 		default:
 			res = "Unknown OS";
@@ -154,19 +154,19 @@ char *getType(Elf64_Ehdr header)
 	switch (header.e_type)
 	{
 		case ET_NONE:
-			res = "No file type";
+			res = "NONE (No file type)";
 			break;
 		case ET_REL:
-			res = "Relocatable object file";
+			res = "REL (Relocatable file)";
 			break;
 		case ET_EXEC:
-			res = "Executable file";
+			res = "EXEC (Executable file)";
 			break;
 		case ET_DYN:
-			res = "DYN (Position-Independent Executable file)";
+			res = "DYN (Shared object file)";
 			break;
 		case ET_CORE:
-			res = "Core file";
+			res = "CORE (Core file)";
 			break;
 		default:
 			res  = "Unknown file type";
@@ -195,8 +195,11 @@ int print_header(Elf64_Ehdr header)
 	printf("\n");
 	printf("  Class:                             %s\n", get_class(header));
 	printf("  Data:                              %s\n", get_data(header));
-	printf("  Version:                           %d (current)\n",
+	printf("  Version:                           %d",
 	       header.e_version);
+	if(header.e_ident[EI_VERSION] == EV_CURRENT)
+		printf(" (current)");
+	printf("\n");
 	printf("  OS/ABI:                            %s\n",
 	       get_os_abi(header));
 	printf("  ABI Version:                       %hu\n",
