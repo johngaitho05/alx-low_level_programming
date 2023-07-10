@@ -4,13 +4,12 @@
  * read_textfile - prints the first n letters of a file
  * @filename: The file to be printed
  * @letters: Number of letters to print
- *
- * Return: Number of printed letters, or 0 on failure
+ * return: Number of printed letters, or 0 on failure
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t nrd, nwr;
+	ssize_t rb, count;
 	char *buf;
 
 	if (!filename)
@@ -25,12 +24,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 
-	nrd = read(fd, buf, letters);
-	nwr = write(STDOUT_FILENO, buf, nrd);
+	rb = read(fd, buf, letters);
+	count = write(STDOUT_FILENO, buf, rb);
 
 	close(fd);
 
 	free(buf);
 
-	return (nwr);
+	return (count);
 }
