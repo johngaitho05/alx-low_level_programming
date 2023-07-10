@@ -29,18 +29,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buff_size);
 		return (0);
 	}
-
 	buff_size[rb] = '\0';
+
 	close(fd);
 
 	wb = write(STDOUT_FILENO, buff_size, rb);
-	if (wb < 0 || (size_t) wb != rb)
+
+	if (wb < 0)
 	{
 		free(buff_size);
 		return (0);
 	}
-
 	free(buff_size);
 	return (wb);
 }
-
