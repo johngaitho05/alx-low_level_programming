@@ -4,7 +4,7 @@
  * read_textfile - prints the first n letters of a file
  * @filename: The file to be printed
  * @letters: Number of letters to print
- * return: Number of printed letters, or 0 on failure
+ * Return: Number of printed letters, or 0 on failure
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
