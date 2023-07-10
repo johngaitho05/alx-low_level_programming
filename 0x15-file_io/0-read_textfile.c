@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * read_textfile - print the first n letters chars of a file
+ * read_textfile - prints the first n letters of a file
  * @filename: The file to be printed
  * @letters: Number of letters to print
- * Return: Number of printed letters
+ *
+ * Return: Number of printed letters, or 0 on failure
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -15,7 +16,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
-
 	if (fd < 0)
 		return (0);
 
@@ -23,24 +23,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buff_size)
 		return (0);
 
-	rb = read(fd,  buff_size, letters);
-
+	rb = read(fd, buff_size, letters);
 	if (rb < 0)
 	{
 		free(buff_size);
 		return (0);
 	}
-	buff_size[rb] = '\0';
 
+	buff_size[rb] = '\0';
 	close(fd);
 
 	wb = write(STDOUT_FILENO, buff_size, rb);
-
-	if (wb < 0)
+	if (wb < 0 || (size_t) wb != rb)
 	{
 		free(buff_size);
 		return (0);
 	}
+
 	free(buff_size);
 	return (wb);
 }
+
