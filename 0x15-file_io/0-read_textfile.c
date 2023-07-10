@@ -9,37 +9,37 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, rb, wb;
-	char *buff_size;
+	ssize_t count;
+	int file;
+	char *text;
 
 	if (!filename)
 		return (0);
-
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
-		return (ssize_t)(0);
-
-	buff_size = malloc(letters * sizeof(char));
-	if (!buff_size)
-		return (ssize_t)(0);
-
-	rb = read(fd, buff_size, letters);
-	if (rb < 0)
+	text = malloc(sizeof(char) * letters + 1);
+	if (text == NULL)
+		return (0);
+	file = open(filename, O_RDONLY);
+	if (file == -1)
 	{
-		free(buff_size);
-		return (ssize_t)(0);
+		free(text);
+		return (0);
 	}
-	buff_size[rb] = '\0';
-
-	close(fd);
-
-	wb = write(STDOUT_FILENO, buff_size, rb);
-
-	if (wb < 0)
+	count = read(file, text, sizeof(char) * letters);
+	if (count == -1)
 	{
-		free(buff_size);
-		return (ssize_t)(0);
+		free(text);
+		close(file);
+		return (0);
 	}
-	free(buff_size);
-	return (wb);
+	count = write(STDOUT_FILENO, text, count);
+	if (count == -1)
+	{
+		free(text);
+		close(file);
+		return (0);
+	}
+	free(text);
+	close(file);
+	return (count);
 }
+
