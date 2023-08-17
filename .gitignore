@@ -100,3 +100,4 @@ test.*
 secret.*
 _putchar.c
 *main.c
+main
