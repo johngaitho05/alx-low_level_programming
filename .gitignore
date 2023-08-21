@@ -98,6 +98,5 @@ nbproject
 test.*
 /data/
 secret.*
-_putchar.c
 *main.c
 main
