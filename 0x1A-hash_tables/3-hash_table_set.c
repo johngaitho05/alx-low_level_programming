@@ -10,20 +10,22 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = key_index((const unsigned char *)key, ht->size);
-	hash_node_t *new_node = NULL;
-	hash_node_t *current = ht->array[index];
 
+	unsigned long int index;
+	hash_node_t *new_node = NULL;
+	hash_node_t *current;
+	char *new_value;
+
+	index = key_index((const unsigned char *)key, ht->size);
+	current = ht->array[index];
 	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
 		return (0);
-	/* Check if the key already exists in the linked list at the computed index */
 	while (current != NULL)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
 			/* Update the value associated with the existing key */
-			char *new_value = strdup(value);
-
+			new_value = strdup(value);
 			if (new_value == NULL)
 				return (0);
 			free(current->value);
