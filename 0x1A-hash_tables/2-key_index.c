@@ -106,28 +106,28 @@ int create_and_add_node(shash_table_t *ht, const char *key, const char *value,
 						unsigned long int index)
 {
 	shash_node_t *current = NULL;
-	char *k;
-	char *v;
+	char *x;
+	char *y;
 	(void) index;
 	current = malloc(sizeof(shash_node_t));
 	if (!current)
 		return (0);
-	k = strdup(key);
-	if (!k)
+	x = strdup(key);
+	if (!x)
 	{
 		free(current);
 		return (0);
 	}
-	v = strdup(value);
-	if (!v)
+	y = strdup(value);
+	if (!y)
 	{
-		free(k);
+		free(x);
 		free(current);
 		return (0);
 	}
 
-	current->key = k;
-	current->value = v;
+	current->key = x;
+	current->value = y;
 	current->next = NULL;
 	current->sprev = NULL;
 	current->snext = NULL;
