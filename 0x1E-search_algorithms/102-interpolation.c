@@ -9,7 +9,7 @@
  * @target: Value to search for
  * Return: Index of the number, or -1 if not found
  */
-int custom_interpolation_search(int *arr, size_t arr_size, int target)
+int interpolation_search(int *arr, size_t arr_size, int target)
 {
 	size_t position, start, end;
 	double factor;
